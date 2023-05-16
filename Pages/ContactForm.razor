@@ -1,0 +1,171 @@
+﻿@page "/ContactForm"
+@using portfolio_new.Model
+
+<h1>Contact Us</h1>
+
+<div class="main-div">
+    <div class="f-div">
+        <EditForm Model="@person" OnValidSubmit="@HandleOnSubmit" class="form">
+
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <label>
+                Name  :
+                <InputText class="input" @bind-Value="person.name" />
+            </label>
+            <br>
+            <label>
+                Email  :
+                <InputText class="input" @bind-Value="person.email" />
+            </label>
+            <br>
+            <label>
+                Phone  :
+                <InputNumber class="input" @bind-Value="person.phone" />
+            </label>
+            <br>
+            <label>
+                Adress :
+                <InputTextArea class="input" @bind-Value="person.adress" />
+            </label>
+
+            <br>
+
+            <div class="btn-div">
+                <button class="submit" type="submit">Submit</button>
+                <button class="reset" type="reset">Reset</button>
+            </div>
+
+
+        </EditForm>
+    </div>
+
+    <div class="c-info">
+        <div class="contGif">
+            <img src="/Images/ww.gif" alt="">
+
+        </div>
+        <h2><span>Contact <br /> Information!</span></h2>
+        <p>
+            Xyz Road <br />Sialkot pakistan <br /><br /> Call Us On: +92123456789 <br /> <br />We are Open From Monday - Saturday <br /> 11:00 am - 12:00am
+
+        </p>
+    </div>
+
+</div>
+
+
+@code {
+    Person person = new Person();
+
+    void HandleOnSubmit()
+    {
+
+    }
+}
+
+
+<style>
+
+    h1 {
+        color: #321313;
+        margin-left: 35%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        width: 100%;
+        font-family: cursive,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    span {
+        color: #321313;
+        font-family: cursive,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+
+    .main-div {
+        display: flex;
+        width: 100%;
+    }
+
+    .f-div {
+        align-items: center;
+        width: 70%;
+        height: auto;
+        background-color: rgb(242, 234, 211);
+        padding: 50px 50px;
+    }
+
+    .c-info {
+        margin-top: 60px;
+        margin-bottom: 60px;
+        width: 50%;
+        /* background-image: url('Images/images (3).jpg');*/
+        background-color: #F4991A;
+        background-repeat: no-repeat;
+        color: white;
+        padding: 60px 40px;
+        margin-left: -100px;
+    }
+
+    .input {
+        margin: 10px;
+        justify-items: center;
+        width: 260px;
+        height: 40px;
+    }
+
+    .form {
+        margin-left: 10%;
+        padding: 40px 20px;
+        width: 70%;
+    }
+
+    .btn-div {
+        justify-content: center;
+        align-items: center;
+        padding: 0 40px;
+        margin: 10px;
+    }
+
+    .reset {
+        padding: 4px 8px;
+        width: 70px;
+        margin-left: 10px;
+        background-color: #F4991A;
+        color: white;
+        border-radius: 7px;
+    }
+
+    .submit {
+        padding: 4px 8px;
+        margin-left: 12px;
+        background-color: #F4991A;
+        color: white;
+        border-radius: 7px;
+    }
+
+        .submit:hover {
+            background-color: #4C4B16;
+            color: white;
+        }
+
+    .reset:hover {
+        background-color: #4C4B16;
+        color: white;
+    }
+
+
+
+
+    .contGif img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .contGif {
+        margin-top: -180px;
+        margin-left: 10px;
+        width: 10px;
+        position: relative;
+    }
+</style>
